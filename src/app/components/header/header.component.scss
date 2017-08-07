@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Sedgwick+Ave');
+@import "../../../partials/_mixin";
+.spacer {
+    flex: 1 1 auto;
+}
+
+.material-icons.mat-icon {
+    @include md-icon-size(32px);
+    @include pointer;
+}
+
+.pointer {
+    @include pointer;
+}
+
+h1 {
+    @extend .pointer;
+    @include font-size(16px,
+    24px,
+    320px,
+    960px);
+    @include letter-spacing;
+    font-family: 'Sedgwick Ave', cursive;
+}

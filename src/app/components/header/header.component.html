@@ -1,0 +1,13 @@
+<md-toolbar color="primary">
+    <span routerLink="/">
+      <md-icon>home</md-icon>
+    </span>
+    <span class="spacer"></span>
+    <span routerLink="/">
+      <h1 class="pointer">Kubi's Shirts Web Store</h1>
+    </span>
+    <span class="spacer"></span>
+    <md-icon routerLink="/cart" mdTooltip="Total Price: {{cartState.totalPrice}}, Total Quantity: {{productNum}}" mdTooltipPosition="left">
+      shopping_cart      
+    </md-icon>
+</md-toolbar>

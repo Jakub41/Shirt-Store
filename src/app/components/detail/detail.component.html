@@ -1,0 +1,30 @@
+<div class="container" *ngIf="product" class="detial-card">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-3 padding-top-20">
+                <img [src]="product.picture" class="product-image">
+            </div>
+            <div class="col-md-9 padding-top-20">
+                <md-card-title>{{product.name}}</md-card-title>
+                <div class="product-info">
+                    <h4>Details</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ratione quis illum, at aliquam magni beatae dignissimos ea aliquid libero necessitatibus voluptatem molestias. Vel tempora, quisquam cum, optio numquam nesciunt.</p>                    
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-xs-6 padding-left-30">
+                        <p><md-icon>attach_money</md-icon>{{product.price}}</p>
+                        <p>Size: {{product.size}}</p>
+                    </div>
+                    <div class="col-md-6 col-xs-6">
+                        <button md-raised-button class="btn btn-hover" (click)="addToMyCart(product)">
+                            <svg>
+                                <rect x="0" y="0" fill="none" width="100%" height="100%"/>
+                            </svg>
+                            Add To Cart
+                        </button>    
+                    </div>
+                </div>                
+            </div>            
+        </div>
+    </div>    
+</div>

@@ -1,0 +1,41 @@
+<kendo-grid
+    [data]="gridView"    
+    [sortable]="{
+    allowUnsort: allowUnsort,
+    mode: multiple ? 'multiple' : 'single'
+    }"
+    [sort]="sort"
+    (sortChange)="sortChange($event)"
+>
+    <kendo-grid-column field="name" title="Name" width="150">
+        <ng-template kendoGridCellTemplate let-dataItem>
+            <a class="item-name" (click)="gotoDetail(dataItem)">{{dataItem.name}}</a>
+        </ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column field="price" title="Price" width="70">
+    </kendo-grid-column>
+    <kendo-grid-column field="colour" title="Colour" width="70" [media]="'(min-width: 576px)'">
+        <ng-template kendoGridCellTemplate let-dataItem>
+            <div class="item-color"
+                [style.background-color]="dataItem.colour">                
+            </div>
+        </ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column field="quantity" title="Quantity" width="80">
+    </kendo-grid-column>    
+    <kendo-grid-column field="size" title="Size" width="60" [media]="'(min-width: 576px)'">
+    </kendo-grid-column>
+    <kendo-grid-column field="picture" title="Picture" width="90"  [media]="'(min-width: 576px)'"> 
+        <ng-template kendoGridCellTemplate let-dataItem>
+            <div class="item-photo"
+                [style.background-image]="backgroundImage(dataItem.picture)">                
+            </div>
+        </ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column title="Action" width="90">        
+        <ng-template kendoGridCellTemplate let-dataItem>
+            <button class="btn btn-success btn-sm" (click)="addToCart(dataItem)">Add Cart</button>
+        </ng-template>
+    </kendo-grid-column>
+</kendo-grid>
+<div [ngBusy]="{busy: busy, message: 'Loading...', backdrop: false, delay: 200, minDuration: 600}"></div>

@@ -1,0 +1,101 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
+@import "../../../partials/_mixin";
+$red: #E1332D;
+$white: #fff;
+.detial-card {
+    width: 70%;
+    margin: 5% auto;
+}
+
+.mat-card-title {
+    @include font-size(20px, 24px, 320px, 960px);
+}
+
+.imageShirt {
+    float: left;
+    width: 200px;
+    height: 200px;
+    margin-right: 10px;
+}
+
+.mat-raised-button {
+    top: 10px;
+}
+
+.btn {
+    @include font-family;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 45px;
+    margin: 0 auto 2em;
+    max-width: 160px;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    vertical-align: middle;
+    width: 100%;
+    @media(min-width: 400px) {
+        display: inline-block;
+        margin-right: 2.5em;
+        &:nth-of-type(even) {
+            margin-right: 0;
+        }
+    }
+    @media(min-width: 600px) {
+        &:nth-of-type(even) {
+            margin-right: 2.5em;
+        }
+        &:nth-of-type(5) {
+            margin-right: 0;
+        }
+    }
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.btn-hover {
+    background: darken($red, 1.5%);
+    font-weight: 100;
+    svg {
+        height: 45px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+    rect {
+        fill: none;
+        stroke: #000;
+        stroke-width: 2;
+        stroke-dasharray: 422, 0;
+    }
+}
+
+.btn-hover:hover {
+    background: rgba($red, 0);
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: #000;
+    rect {
+        stroke: #000;
+        stroke-width: 5;
+        stroke-dasharray: 15, 310;
+        stroke-dashoffset: 48;
+        transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+}
+.padding-top-20{
+    padding-top: 20px;
+}
+
+.padding-left-30{
+    padding-left: 30px;
+}
+
+button{
+    float: left;
+}

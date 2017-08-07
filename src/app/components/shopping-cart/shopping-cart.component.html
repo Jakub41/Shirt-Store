@@ -1,0 +1,75 @@
+<div class="no-content" *ngIf="productIds.length==0">
+    <md-card>
+        <md-card-content>
+            <md-card-title class="text-center">
+                No action available
+            </md-card-title>
+            <md-card-subtitle class="text-center">
+                To add do some thing <a routerLink="/">home</a>
+            </md-card-subtitle>
+        </md-card-content>
+    </md-card>
+</div>
+
+<div class="content" *ngIf="productIds.length>0">
+    <md-card>
+        <md-card-header>
+            <md-card-title>My Cart</md-card-title>
+            <md-card-subtitle>List</md-card-subtitle>
+        </md-card-header>
+        <md-card-content>
+            <md-list>
+                <div *ngFor="let productId of productIds" class="row">
+                    <md-list-item>                        
+                        <div class="col-xs-6">
+                            {{cartState.products[productId].name}}
+                        </div>
+                        <div class="col-xs-2">
+                            {{cartState.products[productId].price}}
+                        </div>
+                        <div class="col-xs-2">
+                            {{cartState.pnum[productId]}}
+                        </div>
+                        <div class="col-xs-2">
+                            <button md-button (click)="remove(productId)">
+                                <md-icon>remove_shopping_cart</md-icon>
+                            </button>
+                        </div>
+                    </md-list-item>
+                    <md-divider></md-divider>
+                </div>
+                <div class="row">
+                    <md-list-item>
+                        <div class="col-xs-6">
+                            Total
+                        </div>
+                        <div class="col-xs-2">
+                            {{cartState.totalPrice}}
+                        </div>
+                        <div class="col-xs-2">
+                            {{totalNum}}
+                        </div>
+                        <div class="col-xs-2">                            
+                        </div>
+                    </md-list-item>
+                </div>                
+            </md-list>
+        </md-card-content>
+    </md-card>
+
+</div>
+
+<!-- <span>
+    {{cartState.products[productId].name}}
+</span>
+<span class="spacer"></span>
+<span>
+    {{cartState.products[productId].price}}
+</span>
+<span class="spacer"></span>
+<span>
+    {{cartState.pnum[productId]}}
+</span>
+<button md-button (click)="remove(productId)">
+    <md-icon>remove_shopping_cart</md-icon>
+</button> -->
